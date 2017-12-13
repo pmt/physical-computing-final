@@ -1,16 +1,17 @@
 # Final Project - Physical Computing and the Internet of Things
 
-This is a template for your final project documentation.  Please replace <content like this> with your own.  For help with the syntax of Github markdown, visit: [Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
+*Name:* Patricia Torvalds PMT
 
-*Name:*  <Your Name>  
-
-*Date:* <Date>
+*Date:* December 2017
 
 ## Project:  < Name of your Project / Device Goes here >
 
-< 2 - 3 sentence brief description / abstract of your project>
+My project satirizes the use of the word "China" in order to derail conversations about American policy or internet freedom by taking live tweets which use the word "China" and using natural language processing to rank their favorability on a 180 degree scale, ranking the tweets as "good" or "bad."
 
 ### Detailed Project Description
+
+In my time as a computer science major at Duke, discussions of a free internet or other intellectual property rights are derailed by invocations of "China" or Chinese politics. I chose to critically examine and satirize this trend, which plays on Orientalist ideas of a regressive Chinese state and prevents meaningful discussion.
+The Raspberry Pi Zero runs a Python script which gathers all public Tweets (not retweets) containing the word "China" and then runs sentiment analysis on them using the TextBlob library to determine the overall sentiment of a tweet from -1.00 to 1.00. 
 
 < Explain the "what" of your project:   What is it?   What does it do?   Explain the "why" of your project:  What problem is it responding to?  What issue is it engaging?   
 
