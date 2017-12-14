@@ -126,9 +126,10 @@ I collected around 4,200 tweets for an average score of 0.04. This makes sense b
 
 To create a visual representation of an overly simplified idea, I thought it would be fitting to create a simple "spinner" which the pointer would move on to display "bad," "neutral," or "good." I wanted to retain the simplicity of the concept while still making the design feel accessible and even funny. 
 
-< Explain the device's form, the aesthetic choices made and how they relate to the concept/function the device is intended to engage >
+I used the format of a gauge to accurately reflect the servo's 180 degree rotational ability. By using my hardware as a jumping-off point, I was able to make an object with a form and function that were well matched.
 
-< include photos of your device >
+![Final Image](images/workingimg.png)
+
 
 ### Evaluation / Reflection
 
