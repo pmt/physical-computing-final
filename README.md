@@ -87,6 +87,40 @@ CREATE TABLE tweet(
 	tweet_sentiment
 )
 ```
+### Sample responses / Outputs
+
+Many tweets I found particularly interesting are displayed along with their score in the images folder, but I am also displaying them here with a brief analysis.
+
+![A Tweet](images/physcompfinal.png)
+I found the above Tweet to be fairly standard for highly negative tweets. Many of them invoke @POTUS or Trump, and they are often linked to a Fox News tweet. They display a form of "yellow peril" associated with the fear of China becoming a world power and thereby defeating America.
+
+![Positive Tweet](images/positivetweet11.png)
+![Positive Tweet](images/positivetweet13.png)
+The above two Tweets are positive and also relatively depoliticized. This was another trend I noticed. Unlike negative tweets, positive Tweets often referred to travel, YouTube videos (often sporting events), or financial development (which is arguably political but often neutralized).
+
+![Positive Tweet](images/positivetweet12.png)
+I believe this was one of the most positive Tweets I saw (that had any meaning and wasn't simply a two-word reply). The meaning of the Tweet is somewhat obscured and could also be read negatively (manipulation) so I just found this to be an interesting fluke in sentiment analytics.
+
+![Positive Tweet](images/positivetweet14.png)
+This tweet surprised me because it seemed to be actually a meaningful reply. While I certainly don't think Twitter is devoid of meaning -- it can be an amazing place to build community or spread important info -- a lot of "China" tweets seemed pretty meaningless, while this one called for attention to nuance and historical relevance. I actually looked up the entire thread by this user and found the following tweets:
+<p><img src="images/tweethread.png" alt="thread" width="48%"> 
+	<img src="images/threadphyscomp.png" alt="thread 2" width="48%">
+</p>
+I really appreciated the nuance and value of this short thread.
+
+![Negative Tweet](images/chinanegativetweet.png)
+![Negative Tweet](images/ironictweet.png)
+The following two Tweets hold up China as an example of all that is "bad" (in the repeal of Net Neutrality, in their dispersal of justice) in two scenarios that don't seem to merit a call for China. Of course the second tweet was wrongly coded but it's naturally hard for the sentiment analysis to pick up sarcasm over text.
+
+![Negative Tweet](images/negativetweet11.png)
+Finally, the perfect negative Tweet invokes a classic of Techno-Orientalism, holding up an example of Chinese internal affairs in headline form without providing nuance and only presenting a "scary" country in which the use of technology is subjugation. This tweet encompasses everything I was looking to critique and everything I have seen in my CS ethics class this semester.
+
+![Full View](images/physcompfullview.png)
+Above is what all the tweets look like while they are coming in at regular intervals.
+
+Finally, using sqlite3, I quantified and averaged all the Tweets to find:
+![Sqlite Data](images/sqlitedata.png)
+I collected around 4,200 tweets for an average score of 0.04. This makes sense because most Tweets get a score of 0.0 and many times the sentiment scorer mistakes sarcasm for sincerity.
 
 ### Design / Form
 
