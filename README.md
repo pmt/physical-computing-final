@@ -34,13 +34,62 @@ The images above show only the wiring of my project. The modified image of a Ras
 
 #### Code
 
-< Explain your code.  You might include code snippets, either `inline` or
-```c++
-//Multiline
-bool photon_fun = TRUE;
-```
-You should link to your full code, either included in the repository (e.g. [my_code.ino](code/my_code.ino)  or to the Shared Revision in your Particle IDE. >
+After importing tweepy, to pull tweets; sqlite3, to store them; and TextBlob, to analyze them, my Python script attaches the servo to Pin 11 as shown in the wiring diagram above. It also uses OAuth in order to allow access to Twitter from Tweepy. To do this I created a simple Twitter app via Twitter's Application Manager in order to obtain private consumer keys and access tokens as shown:
 
+```python
+db = sqlite3.connect('database.db')
+cursor = db.cursor()
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+auth.set_access_token(access_token, access_token_secret)
+api = tweepy.API(auth)
+```
+
+Then, the script calls Tweepy to search all tweets containing the word "China" which are not retweets or quoted Tweets (RT @) and prints the content of the Tweet as well at its author, and initializes a variable for the tweet's timestamp:
+```python
+for tweet in tweepy.Cursor(api.search, q="china").items():
+    if (not tweet.retweeted) and ('RT @' not in tweet.text):
+        try:
+            print(tweet.user.screen_name)
+            print((tweet.text).encode('utf-8').strip())
+            user = tweet.user.screen_name
+            tweet_text = tweet.text
+            tweet_time = tweet.created_at
+```
+
+Then, the script takes all the text in the tweet and analyzes it by the Tweet's polarity. TextBlob also allows for Tweets to be analyzed for their objectivity, but since this was not a primary focus of my project (in fact, objectivity was not a part of this project at all), I chose not to include this metric. Then, I printed the Tweet sentiment to the console and committed it to the database along with a timestamp:
+```python
+            blob = TextBlob(tweet.text)
+            for sentence in blob.sentences:
+                print(sentence.sentiment.polarity)
+                cursor.execute('''INSERT INTO tweet(created_at, tweet_sentiment)
+                        VALUES(?,?)''', (tweet_time, sentence.sentiment.polarity))
+            db.commit()
+            sleep(3)
+```
+
+The last step was to transform the tweet's sentiment analysis, which falls between -1.00 and 1.00, into a range from 0 to 180 so that it would have meaning to the servo itself. I did this through a simple range_of_motion equation:
+```python
+            range_of_motion = (((sentence.sentiment.polarity + 1) * 180) / 2)
+            DC=1./18.*(range_of_motion)+2
+            pwm.ChangeDutyCycle(DC)
+```
+
+Some error catching and then I was good to finish up the script as below.
+```python
+pwm.stop()
+GPIO.cleanup()
+```
+
+All my code can be found at [servo.py](code/servo.py), but I had one other step before everything was done, and that was to set up the sqlite3 database.
+
+With Prof. Kenney's help, I was able to write a short sqlite file which created the database table as below.
+```
+CREATE TABLE tweet(
+	tweet integer PRIMARY KEY,
+	created_at text,
+	tweet_sentiment
+)
+```
 
 ### Design / Form
 
