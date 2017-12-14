@@ -28,8 +28,8 @@ I was originally going to use the graphical interface of NodeRed for the softwar
 
 
 #### Hardware Wiring Diagram
-
-![Wiring Diagram](images/WiringDiagram.png)
+![Wiring Diagram](images/zero-pins.jpg)
+![Wiring Diagram](images/IMG_20171213_213812.jpg)
 < Insert Picture and explanation of Your Wiring Diagram here >
 
 #### Code
