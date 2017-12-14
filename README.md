@@ -29,8 +29,8 @@ I was originally going to use the graphical interface of NodeRed for the softwar
 
 #### Hardware Wiring Diagram
 ![Wiring Diagram](images/zero-pins.jpg)
-![Wiring Diagram](images/Screenshot from 2017-12-13 21-56-52.png)
-< Insert Picture and explanation of Your Wiring Diagram here >
+![Wiring Diagram](images/wiringimg.png)
+The images above show only the wiring of my project. The modified image of a Raspberry Pi and its pins is colorcoded to show which pin refers to ground, power, and to the control of the servo, while the photograph shows directly what the wiring looks like.
 
 #### Code
 
@@ -44,7 +44,7 @@ You should link to your full code, either included in the repository (e.g. [my_c
 
 ### Design / Form
 
-To create a visual representation of an overly simplified idea, I thought it would be fitting to create a simple "spinner" which the pointer would move on to display "bad," "neutral," or "good." 
+To create a visual representation of an overly simplified idea, I thought it would be fitting to create a simple "spinner" which the pointer would move on to display "bad," "neutral," or "good." I wanted to retain the simplicity of the concept while still making the design feel accessible and even funny. 
 
 < Explain the device's form, the aesthetic choices made and how they relate to the concept/function the device is intended to engage >
 
