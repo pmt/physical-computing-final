@@ -21,9 +21,6 @@ The project is made of a Raspberry Pi in a small case and a micro servo with a s
 I was originally going to use the graphical interface of NodeRed for the software component of the project. However, with Prof. Kenney's help I set up a Python script and a sqlite3 database in order to store past tweets while collecting, scoring, and sending them to the RasPi in real time. By SSHing in to the Raspberry Pi I was able to upload my script and run it, and by accessing a sqlite database I was able to collect, observe, and even average all of the data.
 
 
-< You can also explain the development process here >
-
-
 #### Hardware Wiring Diagram
 ![Wiring Diagram](images/zero-pins.jpg)
 ![Wiring Diagram](images/wiringimg.png)
@@ -128,7 +125,15 @@ To create a visual representation of an overly simplified idea, I thought it wou
 
 I used the format of a gauge to accurately reflect the servo's 180 degree rotational ability. By using my hardware as a jumping-off point, I was able to make an object with a form and function that were well matched.
 
-![Final Image](images/workingimg.png)
+![Final Image](images/workingimg.jpg)
+![Final Image side](images/workingimgside.jpg)
+
+I also made a few gifs of the final product being as my computer died prior to the presentations:
+![Gif 1](images/giphy8596141268527231331.gif)
+![Gif 2](images/giphy8537229270211868392.gif)
+![Gif 3](images/giphy1989853969197521520.gif)
+![Gif 4](images/giphy8754559685918186059.gif)
+
 
 
 ### Evaluation / Reflection
